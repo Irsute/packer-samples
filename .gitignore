@@ -4,5 +4,8 @@ packer_cache/
 # Crash log
 crash.log
 
-# For built boxes
-*.box
+# Built boxes
+builds/*.box
+
+# Local iso images
+iso/*.iso

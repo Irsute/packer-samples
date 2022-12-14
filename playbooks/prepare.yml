@@ -1,0 +1,15 @@
+---
+- name: Prepare KVM Image with good practices
+  hosts: localhost
+  gather_facts: true
+  become: false
+  tasks:
+    - name: debug
+      shell: hostname
+      register: target
+    - name: debug target
+      debug:
+        var: target
+    - name: change timezone
+      timezone:
+        name: Europe/Paris
