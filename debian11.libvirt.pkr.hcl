@@ -48,9 +48,14 @@ source "qemu" "debian11" {
 build {
   sources = ["source.qemu.debian11"]
 
+#  provisioner "shell" {
+#    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -S -E bash '{{ .Path }}'"
+#    inline = ["sed -i 's/ens3/ens5/g' /etc/network/interfaces"]
+#  }
+
   post-processors {
     post-processor "vagrant" {
-      output = "builds/libvirt-debian11.box"
+      output = "builds/{{.BuildName}}-{{.Provider}}-{{.ArtifactId}}.box"
     }
   }
 }

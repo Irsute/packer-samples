@@ -9,3 +9,6 @@ builds/*.box
 
 # Local iso images
 iso/*.iso
+
+# disable vagrant cache
+vagrant_files/.vagrant
